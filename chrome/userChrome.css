@@ -1,7 +1,7 @@
 /*
- * Liquid Fox - Transparent Firefox Theme for macOS
+ *  Liquid Fox, Aure edition - Firefox Theme for macOS
  *
- * Required about:config settings:
+ *   Required about:config settings:
  *   toolkit.legacyUserProfileCustomizations.stylesheets = true
  *   widget.macos.titlebar-blend-mode.behind-window = true
  */
@@ -11,39 +11,61 @@
    ============================================ */
 :root {
   --liquid-radius: 12px;
+  --liquid-radius-2: 16px;
   --liquid-radius-small: 8px;
-  --liquid-padding: 8px;
+  --liquid-padding: 0px;
   --liquid-shadow:
-    0 0.5px 0 0 rgba(255, 255, 255, 0.35),
-    0 1.5px 4.5px rgba(0, 0, 0, 0.08),
-    0 7px 24px rgba(0, 0, 0, 0.12);
+      0 0.5px 0 0 rgba(255, 255, 255, 0.35),
+      0 1.5px 4.5px rgba(0, 0, 0, 0.08),
+      0 7px 24px rgba(0, 0, 0, 0.12);
   --liquid-shadow-small:
-    0 0.5px 0 0 rgba(255, 255, 255, 0.35),
-    0 1px 3px rgba(0, 0, 0, 0.04),
-    0 3px 11px rgba(0, 0, 0, 0.06);
+      0 0.5px 0 0 rgba(255, 255, 255, 0.35),
+      0 1px 3px rgba(0, 0, 0, 0.04),
+      0 3px 11px rgba(0, 0, 0, 0.06);
   --liquid-window-tint:
-    linear-gradient(
-      176deg,
-      rgba(170, 155, 110, 0) 0%,
-      rgba(65, 125, 110, 0.06) 30%,
-      rgba(50, 105, 145, 0.13) 60%,
-      rgba(185, 150, 85, 0.19) 100%
-    );
+      0 0.5px 0 0 rgba(255, 255, 255, 0.35),
+      0 1px 3px rgba(0, 0, 0, 0.04),
+      0 3px 11px rgba(0, 0, 0, 0.06);
   --liquid-border-gradient:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+      linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 255, 255, 0.3) 50%,
+          rgba(255, 255, 255, 0) 100%
+      );
   --liquid-border-gradient-dark:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
+      linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          rgba(255, 255, 255, 0) 100%
+      );
 }
+
+.tab-background {
+  --tab-background-color-selected: light-dark(#dfdfdf, #484848) !important;
+  /*--tab-selected-outline-color: light-dark(#fbfbfbd6, #5c5c5c) !important;*/
+}
+
+/* ============================================
+   Menus, popup panels
+   ============================================ */
+
+.tab-preview-content-main,
+#appMenu-multiView {
+    background: light-dark(#fdfdff, #1e1e1e);
+    box-shadow: inset 0px 0px 8px 3px light-dark(rgba(0,0,0,0.04), rgba(255, 255, 255, 0.04));
+}
+
+#appMenu-popup {
+  border: 1px solid;
+  border-left-color: #c7c7c7;
+  border-top-color: #c9c9c9;
+  border-right-color: #c2c2c2;
+  border-bottom-color: #b7b7b7;
+  border-radius: var(--liquid-radius-small);
+}
+    
 
 /* ============================================
    Window Transparency
@@ -61,6 +83,9 @@
     corner-shape: squircle !important;
   }
 }
+
+
+
 
 /* ============================================
    Browser Chrome - Make UI panels transparent
@@ -87,7 +112,7 @@
   #tabbrowser-tabpanels,
   #browser-panel,
   #browsing-context-stack {
-    background: transparent !important;
+    background: light-dark(rgb(252, 252, 252), rgb(30, 30, 30)); !important;
   }
 
   /* --- Expand-on-hover sidebar: floating overlay card --- */
@@ -189,9 +214,9 @@
     --tab-border-radius: var(--liquid-radius-small) !important;
     font-size: calc(1em + 1px) !important;
   }
-
+  
   .tab-background:is([selected], [multiselected]) {
-    box-shadow: var(--liquid-shadow-small) !important;
+      box-shadow: var(--liquid-shadow-small) !important;
   }
 
   /* --- Address bar rounding --- */
@@ -334,6 +359,10 @@
     width: 8px !important;
   }
 
+  .titlebar-spacer[type="post-tabs"] {
+      width: 8px !important;
+  }
+
   /* --- Inactive pinned tabs: subtle background + visible hover --- */
   .tabbrowser-tab[pinned]:not([selected]):not([multiselected]) .tab-background {
     background-color: rgba(0, 0, 0, 0.08) !important;
@@ -403,8 +432,14 @@
   /* --- Address bar: rounded top corners + side margin --- */
   #nav-bar {
     margin: 0 var(--liquid-padding) !important;
-    border-radius: var(--liquid-radius) var(--liquid-radius) 0 0 !important;
+    border-radius: var(--liquid-radius-2) var(--liquid-radius-2) 0 0 !important;
     overflow: hidden !important;
+
+    --toolbar-background-color: light-dark(#f7f7f7, #161717);
+    --tabs-navbar-separator-color: light-dark(#fcfcfc, rgba(114, 114, 114, 0.25));
+    --tabs-shadow-color: light-dark(rgba(114, 114, 114, 0.25), rgba(48, 48, 48, 0.25));
+    border-top: 1px solid var(--tabs-navbar-separator-color) !important;
+    box-shadow: var(--tabs-shadow-color) 0px 4px 40px 10px;
   }
 
   /* --- Content area: rounded bottom corners + side/bottom margin + shadow --- */
