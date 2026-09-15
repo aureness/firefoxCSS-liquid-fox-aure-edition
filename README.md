@@ -1,24 +1,20 @@
-# Liquid Fox
+# Liquid Fox, Aure Edition
 
-A transparent Firefox theme for macOS with vibrancy blur, rounded panels, nicer tab groups and a subtle gradient tint. Supports both vertical and horizontal tab layouts.
+A Firefox theme for macOS inspired by Golden Gate style.
+Based on the miloszfalinski/liquid-fox.
 
-<!-- Add a screenshot: place it in the repo and update the path -->
-![Liquid Fox screenshot](screenshot.png)
+<picture width="50">
+  <source media="(prefers-color-scheme: dark)" srcset="./screenshots/dark.png?raw=true">
+  <source media="(prefers-color-scheme: light)" srcset="./screenshots/light.png?raw=true">
+  <img alt="Screenshot of the Firefox browser with my theme">
+</picture>
 
-## Features
-
-- macOS vibrancy/blur behind the entire browser chrome
-- Subtle gradient tint overlay
-- Rounded content panels with soft shadows and gradient outlines
-- Dia-inspired tab group styling (vertical and horizontal)
-- Collapsed sidebar overrides for vertical tabs
-- Sidebar icon strip styling with background for horizontal tabs
-- Dark mode adjustments (stronger group tints, brighter backdrop)
-
-## Requirements
-
-- macOS
-- Firefox 130+
+- Customized just the way I like it
+- Big fat borders were removed
+- Colours were picked from macOS Golden Gate
+- Shadows were added everywhere
+- App menu and popups were styled to match native design
+- Dark mode adjustments
 
 ## Install
 
